@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="panel-title">My Contact List</h2>
+        </div>
+        <div class="col-xs-5 panel-body">
+            <ul class="list-group">
+                <contact ng-repeat="item in $ctrl.contacts | orderBy: 'FirstName'"
+                         contact="item"
+                         on-select="$ctrl.selectContact($event);">
+                </contact>
+            </ul>
+        </div>
+        <div class="col-xs-7 panel-body">
+            <div class="list-group panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Contact Details</h3>
+                </div>
+                <div class="panel-body">
+                    <item-detail label="ID" value="$ctrl.selectedContact.Id"></item-detail>
+                    <item-detail label="First Name" value="$ctrl.selectedContact.FirstName"></item-detail>
+                    <item-detail label="Last Name" value="$ctrl.selectedContact.LastName"></item-detail>
+                    <item-detail label="Phone" value="$ctrl.selectedContact.Phone"></item-detail>
+                    <item-detail label="Email" value="$ctrl.selectedContact.Email"></item-detail>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
